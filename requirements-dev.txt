@@ -1,0 +1,9 @@
+black
+isort
+pyflakes
+autopep8
+lazydocs
+moto
+coverage
+unittest
+pyparsing # moto depndency

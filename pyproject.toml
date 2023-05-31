@@ -1,0 +1,20 @@
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs    # exclude a common directory
+  | \.git     # exclude a common directory
+  | \.hg      # exclude a common directory
+  | \.mypy_cache  # exclude a common directory
+  | \.nox     # exclude a common directory
+  | \.tox     # exclude a common directory
+  | \.venv    # exclude a common directory
+  | _build    # exclude a common directory
+  | buck-out  # exclude a common directory
+  | build     # exclude a common directory
+  | dist      # exclude a common directory
+  | node_modules  # exclude a common directory
+)/
+'''
+
