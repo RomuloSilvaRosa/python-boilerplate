@@ -1,0 +1,24 @@
+jobs:
+  - job: validate
+    displayName: Validate
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+      - checkout: self
+        displayName: _checkout
+        persistCredentials: true
+        submodules: true
+      - task: CmdLine@2
+        displayName: RUN VALIDATION
+        inputs:
+          script: |
+            bash azure-pipelines/validate.sh
+      - task: PullRequestComment@1
+        displayName: '_bot_comment'
+        inputs:
+          comment: |
+            Azure Devops Bot: The pipeline run successfuully.
+            Please verify in https://dev.azure.com/kdop/Lakehouse%20Cogna/_build/results?buildId=$(build.buildid)&view=logs&j=$(System.JobId) 
+        
+              
+            
