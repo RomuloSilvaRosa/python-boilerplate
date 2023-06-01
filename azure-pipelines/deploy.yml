@@ -1,9 +1,7 @@
 trigger:
-  branches:
-    include:
-      - main
-      - develop
-      - staging
+  - main
+  - develop
+  - staging
 jobs:
   - job: deploy
     displayName: Deploy
