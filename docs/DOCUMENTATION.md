@@ -4,7 +4,7 @@
 
 ## Modules
 
-- No modules
+- [`do_nothing`](./do_nothing.md#module-do_nothing): does nothing module
 
 ## Classes
 
@@ -12,7 +12,7 @@
 
 ## Functions
 
-- No functions
+- [`do_nothing.function_does_nothing`](./do_nothing.md#function-function_does_nothing): function that does nothing
 
 
 ---
