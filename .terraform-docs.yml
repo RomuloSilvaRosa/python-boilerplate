@@ -1,0 +1,56 @@
+formatter: "markdown table" # this is required
+
+header-from: main.tf
+
+sections:
+  hide: []
+  show: []
+
+  hide-all: false # deprecated in v0.13.0, removed in v0.15.0
+  show-all: true  # deprecated in v0.13.0, removed in v0.15.0
+
+# .terraform-docs.yml
+content: |-
+  {{ .Header }}
+
+  {{ .Requirements }}
+
+  {{ .Modules }}
+
+  {{ .Providers }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  {{ .Resources }}
+
+  ## Examples
+  ```hcl
+    {{ include "examples/main.tf" }}
+  ```
+
+  {{ .Footer }}
+
+output:
+  file: README.md
+  mode: inject
+
+recursive:
+  enabled: false
+  path: .
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: false
+  html: true
+  indent: 2
+  lockfile: false
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
