@@ -4,6 +4,12 @@ endif
 
 t.lint: ## lint
 	@find . -name '*.tf' -exec terraform fmt "{}" \;
+t.doc: ## doc
+	folders=$$(find . -maxdepth 2 -type f -name '*.tf' -exec dirname {} \; | sort | uniq); \
+    for D in $$folders; do \
+        echo "Generating doc $${D}"; \
+        terraform-docs $${D}; \
+    done
 
 p.lint: ## Remove unused imports and variables/Format using black
 	@echo "---- Refactoring ----"
